@@ -46,18 +46,18 @@ const User = mongoose.model('User', {
     }
 })
 
-const me = new User({
-    name: 'Andrew',
-    email: 'mike@yahoo.com',
-    password: 'phone818',
+// const me = new User({
+//     name: 'Andrew',
+//     email: 'mike@yahoo.com',
+//     password: 'phone818',
 
-})  
+// })  
 
-me.save().then(() => {
-    console.log(me)
-}).catch((error) => {
-    console.log('Error!', error)
-})
+// me.save().then(() => {
+//     console.log(me)
+// }).catch((error) => {
+//     console.log('Error!', error)
+// })
 // const me = new User({
 //     name: 'Ace',
 //     age: 29
@@ -69,22 +69,24 @@ me.save().then(() => {
 //     console.log('Error!', error)
 // })
 
-// const Task = mongoose.model('Task', {
-//     description: {
-//         type: String
-//     }, 
-//     completed: {
-//         Boolean
-//     }
-// })
+const Task = mongoose.model('Task', {
+    description: {
+        type: String,
+        required: true, 
+        trim: true
+    }, 
+    completed: {
+        type: Boolean,
+        default: false
+    }
+})
 
-// const task = new Task({
-//     description: 'Clean up room',
-//     completed: true
-// })
+const task = new Task({
+    description: '  Bake cake',
+})
 
-// task.save().then(() => {
-//     console.log(task)
-// }).catch((error) => {
-//     console.log(error)
-// })
+task.save().then(() => {
+    console.log(task)
+}).catch((error) => {
+    console.log(error)
+})
