@@ -63,7 +63,7 @@ userSchema.methods.toJSON = function () {
     const userObject = user.toObject()
 
     delete userObject.password
-    delete userObject.token
+    delete userObject.tokens
 
     return userObject
 }
@@ -74,6 +74,7 @@ userSchema.methods.generateAuthToken = async function () {
 
     user.tokens = user.tokens.concat({ token })
     await user.save()
+    
     return token
 }
 
