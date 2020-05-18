@@ -27,21 +27,21 @@ const userTwo = {
 }
 
 const taskOne = {
-    _id: mongoose.Types.ObjectId(),
+    _id: new mongoose.Types.ObjectId(),
     description: 'first task',
     completed: false,
     owner: userOne._id
 }
 
 const taskTwo = {
-    _id: mongoose.Types.ObjectId(),
+    _id: new mongoose.Types.ObjectId(),
     description: 'second task',
     completed: false,
     owner: userOne._id
 }
 
 const taskThree = {
-    _id: mongoose.Types.ObjectId(),
+    _id: new mongoose.Types.ObjectId(),
     description: 'third task',
     completed: false,
     owner: userTwo._id
